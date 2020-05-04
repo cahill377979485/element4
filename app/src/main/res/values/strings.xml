@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">四柱</string>
+    <string name="title_predict">预测</string>
+    <string name="title_setting">设置</string>
+    <string name="title_others">其他</string>
+    <string name="title_desc">标题可以很长也可以很短</string>
+</resources>

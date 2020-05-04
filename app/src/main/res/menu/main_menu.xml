@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_predict"
+        android:icon="@drawable/ic_predict_black_24dp"
+        android:title="@string/title_predict" />
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_setting_black_24dp"
+        android:title="@string/title_setting" />
+    <item
+        android:id="@+id/navigation_others"
+        android:icon="@drawable/ic_others_black_24dp"
+        android:title="@string/title_others" />
+</menu>

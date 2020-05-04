@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_predict">
+
+    <fragment
+        android:id="@+id/navigation_predict"
+        android:name="com.cahill.element4.ui.predict.PredictFragment"
+        android:label="@string/title_predict"
+        tools:layout="@layout/fragment_predict" />
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.cahill.element4.ui.setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/navigation_others"
+        android:name="com.cahill.element4.ui.others.OthersFragment"
+        android:label="@string/title_others"
+        tools:layout="@layout/fragment_others" />
+</navigation>
