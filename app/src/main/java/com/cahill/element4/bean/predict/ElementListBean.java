@@ -1,9 +1,7 @@
-package com.cahill.element4.binder.predict;
+package com.cahill.element4.bean.predict;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import com.cahill.element4.model.predict.ElementBean;
 
 import java.util.List;
 

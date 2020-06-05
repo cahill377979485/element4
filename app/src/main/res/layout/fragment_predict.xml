@@ -17,12 +17,92 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edge"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/title_predict"
+        android:textSize="@dimen/text_title"
+        app:layout_constraintEnd_toEndOf="@id/v_bg"
+        app:layout_constraintStart_toStartOf="@id/v_bg"
+        app:layout_constraintTop_toTopOf="@id/v_bg" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge"
+        android:layout_marginTop="@dimen/edge"
+        android:textSize="@dimen/text_text"
+        app:layout_constraintStart_toStartOf="@id/v_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:text="张三" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edge"
+        android:textSize="@dimen/text_desc"
+        app:layout_constraintBottom_toBottomOf="@id/tv_name"
+        app:layout_constraintStart_toEndOf="@id/tv_name"
+        app:layout_constraintTop_toTopOf="@id/tv_name"
+        android:text="1990-01-01 中午12点" />
+
+    <TextView
+        android:id="@+id/tv_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edge"
+        android:text="@string/year"
+        android:textSize="@dimen/text_text"
+        app:layout_constraintEnd_toStartOf="@id/tv_month"
+        app:layout_constraintStart_toStartOf="@id/v_bg"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edge"
+        android:text="@string/month"
+        android:textSize="@dimen/text_text"
+        app:layout_constraintEnd_toStartOf="@id/tv_day"
+        app:layout_constraintStart_toEndOf="@id/tv_year"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edge"
+        android:text="@string/day"
+        android:textSize="@dimen/text_text"
+        app:layout_constraintEnd_toStartOf="@id/tv_hour"
+        app:layout_constraintStart_toEndOf="@id/tv_month"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edge"
+        android:text="@string/hour"
+        android:textSize="@dimen/text_text"
+        app:layout_constraintEnd_toEndOf="@id/v_bg"
+        app:layout_constraintStart_toEndOf="@id/tv_day"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/edge"
+        android:layout_marginTop="@dimen/edge"
         app:layout_constraintEnd_toEndOf="@id/v_bg"
         app:layout_constraintStart_toStartOf="@id/v_bg"
-        app:layout_constraintTop_toTopOf="@id/v_bg" />
+        app:layout_constraintTop_toBottomOf="@id/tv_year" />
 </androidx.constraintlayout.widget.ConstraintLayout>

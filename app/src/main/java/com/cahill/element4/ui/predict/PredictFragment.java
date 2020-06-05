@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cahill.element4.R;
 import com.cahill.element4.base.BaseFragment;
 import com.cahill.element4.binder.predict.ElementBinder;
-import com.cahill.element4.model.predict.ElementBean;
+import com.cahill.element4.bean.predict.ElementBean;
+import com.cahill.element4.util.Checker;
 import com.cahill.element4.util.MyGridLayoutManager;
 
 import butterknife.BindView;
@@ -41,8 +42,10 @@ public class PredictFragment extends BaseFragment {
     @Override
     protected void initData() {
         vm.getList().observe(getViewLifecycleOwner(), elementBeans -> {
-            items.clear();
-            adapter.notifyDataSetChanged();
+            if (Checker.hasList(items)) {
+                items.clear();
+                adapter.notifyDataSetChanged();
+            }
             items.addAll(elementBeans);
             adapter.notifyDataSetChanged();
         });
