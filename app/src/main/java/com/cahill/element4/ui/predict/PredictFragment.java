@@ -2,9 +2,11 @@ package com.cahill.element4.ui.predict;
 
 import android.os.Bundle;
 import android.view.View;
+
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.cahill.element4.R;
 import com.cahill.element4.base.BaseFragment;
 import com.cahill.element4.binder.predict.ElementBinder;
@@ -37,10 +39,6 @@ public class PredictFragment extends BaseFragment {
         rv.setLayoutManager(new MyGridLayoutManager(getActivity(), 4));
         rv.setHasFixedSize(true);
         rv.setAdapter(adapter);
-    }
-
-    @Override
-    protected void initData() {
         vm.getList().observe(getViewLifecycleOwner(), elementBeans -> {
             if (Checker.hasList(items)) {
                 items.clear();
@@ -49,5 +47,10 @@ public class PredictFragment extends BaseFragment {
             items.addAll(elementBeans);
             adapter.notifyDataSetChanged();
         });
+    }
+
+    @Override
+    protected void initData() {
+
     }
 }

@@ -33,9 +33,9 @@
         android:id="@+id/tv_TG"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edge"
         android:gravity="center"
         android:textSize="@dimen/text_text"
-        android:layout_marginTop="@dimen/edge"
         app:layout_constraintEnd_toStartOf="@id/tv_DZ"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_name"
@@ -55,26 +55,46 @@
 
     <TextView
         android:id="@+id/tv_WX1"
-        app:layout_constraintStart_toStartOf="@id/tv_TG"
-        app:layout_constraintEnd_toEndOf="@id/tv_TG"
         android:layout_width="0dp"
-        tools:text="阳金"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edge"
         android:gravity="center"
         android:textSize="@dimen/text_desc"
-        android:layout_marginTop="@dimen/edge"
+        app:layout_constraintEnd_toEndOf="@id/tv_TG"
+        app:layout_constraintStart_toStartOf="@id/tv_TG"
         app:layout_constraintTop_toBottomOf="@id/tv_TG"
-        android:layout_height="wrap_content"/>
+        tools:text="阳金" />
 
     <TextView
         android:id="@+id/tv_WX2"
-        app:layout_constraintStart_toStartOf="@id/tv_DZ"
-        app:layout_constraintEnd_toEndOf="@id/tv_DZ"
         android:layout_width="0dp"
-        tools:text="阴土"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edge"
         android:gravity="center"
         android:textSize="@dimen/text_desc"
-        android:layout_marginTop="@dimen/edge"
+        app:layout_constraintEnd_toEndOf="@id/tv_DZ"
+        app:layout_constraintStart_toStartOf="@id/tv_DZ"
         app:layout_constraintTop_toBottomOf="@id/tv_TG"
-        android:layout_height="wrap_content"/>
+        tools:text="阴土" />
+
+    <View
+        android:id="@+id/v_shadow1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/myAlphaBlack"
+        app:layout_constraintBottom_toBottomOf="@id/tv_WX1"
+        app:layout_constraintEnd_toEndOf="@id/tv_WX1"
+        app:layout_constraintStart_toStartOf="@id/tv_WX1"
+        app:layout_constraintTop_toTopOf="@id/tv_WX1" />
+
+    <View
+        android:id="@+id/v_shadow2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/myAlphaBlack"
+        app:layout_constraintBottom_toBottomOf="@id/tv_WX2"
+        app:layout_constraintEnd_toEndOf="@id/tv_WX2"
+        app:layout_constraintStart_toStartOf="@id/tv_WX2"
+        app:layout_constraintTop_toTopOf="@id/tv_WX2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

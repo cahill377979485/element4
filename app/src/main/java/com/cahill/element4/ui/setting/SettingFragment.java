@@ -19,7 +19,7 @@ import butterknife.BindView;
 
 public class SettingFragment extends BaseFragment {
 
-    @BindView(R.id.text_notifications)
+    @BindView(R.id.tv_setting)
     TextView tv;
     private SettingVM vm;
 

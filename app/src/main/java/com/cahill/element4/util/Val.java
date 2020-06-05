@@ -1,5 +1,7 @@
 package com.cahill.element4.util;
 
+import com.cahill.element4.R;
+
 /**
  * @author 文琳
  * @time 2020/6/5 11:55
@@ -8,6 +10,7 @@ package com.cahill.element4.util;
 public class Val {
     public static final String[] YYs = {Val.YY_YIN, Val.YY_YANG};
     public static final String[] WXsKill = {Val.WX_JIN, Val.WX_MU, Val.WX_TU, Val.WX_SHUI, Val.WX_HUO};
+    public static final int[] WX_COLOR = {R.color.myJin, R.color.myMu, R.color.myTu, R.color.myShui, R.color.myHuo};
     public static final String[] WXsBorn = {Val.WX_MU, Val.WX_HUO, Val.WX_TU, Val.WX_JIN, Val.WX_SHUI};
     public static final String[] TGs = {Val.TG_JIA, Val.TG_YI, Val.TG_BING, Val.TG_DING, Val.TG_WU, Val.TG_JI, Val.TG_GENG, Val.TG_XIN, Val.TG_REN, Val.TG_GUI};
     public static final String[] DZs = {Val.DZ_ZI, Val.DZ_CHOU, Val.DZ_YIN, Val.DZ_MAO, Val.DZ_CHEN, Val.DZ_SI, Val.DZ_WU, Val.DZ_WEI, Val.DZ_SHEN, Val.DZ_YOU, Val.DZ_XU, Val.DZ_HAI};

@@ -5,10 +5,18 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="myBlack">#333333</color>
     <color name="myBlackDark">#000000</color>
+    <color name="myAlphaBlack">#60000000</color>
     <color name="myGray">#999999</color>
     <color name="myWhite">#ffffff</color>
     <color name="myTitle">#f3f3f3</color>
     <color name="myText">#cccccc</color>
     <color name="myDesc">#aaaaaa</color>
     <color name="myTips">#aaaaaa</color>
+    <color name="myYin">#999999</color>
+    <color name="myYang">#f3f3f3</color>
+    <color name="myJin">#FFB300</color>
+    <color name="myMu">#4CAF50</color>
+    <color name="myTu">#8F3F26</color>
+    <color name="myShui">#42A5F5</color>
+    <color name="myHuo">#C62828</color>
 </resources>

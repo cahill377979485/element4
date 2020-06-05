@@ -12,6 +12,7 @@ import com.cahill.element4.R;
 import com.cahill.element4.bean.predict.ElementBean;
 import com.cahill.element4.util.EleUtil;
 import com.cahill.element4.util.UIHelper;
+import com.cahill.element4.util.Val;
 
 import me.drakeet.multitype.ItemViewBinder;
 
@@ -22,7 +23,6 @@ import me.drakeet.multitype.ItemViewBinder;
  */
 public class ElementBinder extends ItemViewBinder<ElementBean, ElementBinder.ElementHolder> {
 
-
     @NonNull
     @Override
     protected ElementHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
@@ -30,17 +30,22 @@ public class ElementBinder extends ItemViewBinder<ElementBean, ElementBinder.Ele
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull ElementHolder holder, @NonNull ElementBean elementBean) {
-        UIHelper.setText(holder.tvText, elementBean.getName());
-        UIHelper.setText(holder.tvName, elementBean.getTG() + elementBean.getDZ());
-        UIHelper.setText(holder.tvTG, elementBean.getTG());
-        UIHelper.setText(holder.tvDZ, elementBean.getDZ());
-        UIHelper.setText(holder.tvWX1, EleUtil.getYYbyTG(elementBean.getTG()) + EleUtil.getWXbyTG(elementBean.getTG()));
-        UIHelper.setText(holder.tvWX2, EleUtil.getYYbyDZ(elementBean.getDZ()) + EleUtil.getWXbyDZ(elementBean.getDZ()));
+    protected void onBindViewHolder(@NonNull ElementHolder holder, @NonNull ElementBean bean) {
+        UIHelper.setText(holder.tvText, bean.getName());
+        UIHelper.setText(holder.tvName, bean.getTG() + bean.getDZ());
+        UIHelper.setText(holder.tvTG, bean.getTG());
+        UIHelper.setText(holder.tvDZ, bean.getDZ());
+        UIHelper.setText(holder.tvWX1, EleUtil.getYYbyTG(bean.getTG()) + EleUtil.getWXbyTG(bean.getTG()));
+        UIHelper.setText(holder.tvWX2, EleUtil.getYYbyDZ(bean.getDZ()) + EleUtil.getWXbyDZ(bean.getDZ()));
+        UIHelper.setTextColor(holder.tvWX1, EleUtil.getColorIdByWX(EleUtil.getWXbyTG(bean.getTG())));
+        UIHelper.setTextColor(holder.tvWX2, EleUtil.getColorIdByWX(EleUtil.getWXbyDZ(bean.getDZ())));
+        UIHelper.setVisibleInvisible(holder.v1, EleUtil.getYYbyTG(bean.getTG()).equals(Val.YY_YIN));
+        UIHelper.setVisibleInvisible(holder.v2, EleUtil.getYYbyDZ(bean.getDZ()).equals(Val.YY_YIN));
     }
 
     static class ElementHolder extends RecyclerView.ViewHolder {
         TextView tvText, tvName, tvTG, tvDZ, tvWX1, tvWX2;
+        View v1, v2;
 
         ElementHolder(@NonNull View itemView) {
             super(itemView);
@@ -50,6 +55,8 @@ public class ElementBinder extends ItemViewBinder<ElementBean, ElementBinder.Ele
             tvDZ = itemView.findViewById(R.id.tv_DZ);
             tvWX1 = itemView.findViewById(R.id.tv_WX1);
             tvWX2 = itemView.findViewById(R.id.tv_WX2);
+            v1 = itemView.findViewById(R.id.v_shadow1);
+            v2 = itemView.findViewById(R.id.v_shadow2);
         }
     }
 }

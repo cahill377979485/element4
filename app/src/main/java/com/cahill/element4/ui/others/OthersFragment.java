@@ -19,7 +19,7 @@ import com.cahill.element4.ui.setting.SettingVM;
 import butterknife.BindView;
 
 public class OthersFragment extends BaseFragment {
-    @BindView(R.id.text_dashboard)
+    @BindView(R.id.tv_others)
     TextView textView;
 
     private OthersVM vm;

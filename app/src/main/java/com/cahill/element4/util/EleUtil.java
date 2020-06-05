@@ -1,10 +1,14 @@
 package com.cahill.element4.util;
 
+import androidx.core.content.ContextCompat;
+
+import com.cahill.element4.R;
+import com.cahill.element4.base.MyApplication;
+
 /**
  * @author 文琳
  * @time 2020/6/5 14:07
- * @desc
- * 地支与五行
+ * @desc 地支与五行
  * 子（鼠）属阳水，北方；亥（猪）属阴水，北方。
  * 寅（虎）属阳木，东方；卯（兔）属阴木，东方。
  * 巳（蛇）属阴火，南方；午（马）属阳火，南方。
@@ -20,6 +24,14 @@ package com.cahill.element4.util;
  */
 public class EleUtil {
 
+    public static int getColorIdByYY(String yy) {
+        return yy.equals(Val.YY_YANG) ? R.color.myTitle : R.color.myGray;
+    }
+
+    public static int getColorIdByWX(String wx) {
+        return Val.WX_COLOR[getPositionByWX(wx)];
+    }
+
     public static String getYYbyTG(String tg) {
         int position = getPositionByTG(tg);
         return position % 2 == 0 ? Val.YY_YANG : Val.YY_YIN;
@@ -27,7 +39,7 @@ public class EleUtil {
 
     public static String getWXbyTG(String tg) {
         int position = getPositionByTG(tg);
-        return Val.WXsBorn[2 * position];
+        return Val.WXsBorn[position / 2];
     }
 
     public static String getYYbyDZ(String dz) {
@@ -37,7 +49,7 @@ public class EleUtil {
 
     public static String getWXbyDZ(String dz) {
         int position = getPositionByTG(dz);
-        switch(position){
+        switch (position) {
             case 0://子
             case 11://亥
                 return Val.WX_SHUI;
@@ -53,6 +65,13 @@ public class EleUtil {
             default:
                 return Val.WX_TU;
         }
+    }
+
+    public static int getPositionByWX(String wx) {
+        for (int i = 0; i < Val.WXsKill.length; i++) {
+            if (Val.WXsKill[i].contains(wx)) return i;
+        }
+        return 0;
     }
 
     public static int getPositionByTG(String tg) {
